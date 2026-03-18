@@ -15,7 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
   <canvas id="space-canvas" aria-hidden="true"></canvas>
@@ -287,11 +288,11 @@
       <span>Online</span>
     </div>
     <p class="agent-float__text">
-      Assistente em modo protótipo. Esta área permanecerá visível durante toda a navegação.
+     Esta área permanecerá visível durante toda a navegação.
     </p>
     <div id="agent-float-messages" class="agent-float__messages" aria-live="polite">
       <div class="agent-msg agent-msg--agent">
-        Olá! Sou o assistente do protótipo. Posso responder com base no Data Store documental da NEOOH.
+        Olá! Sou o Marvin . Posso responder com base no Data Store documental da NEOOH.
       </div>
     </div>
     <form id="agent-float-form" class="agent-float__form">
@@ -315,7 +316,7 @@
     - agents-data.js: fornece base de respostas do chat.
     - Se remover, o chat continua funcionando, mas responderá apenas fallback genérico.
   -->
-  <script src="agents-data.js"></script>
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='agents-data.js') }}"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
